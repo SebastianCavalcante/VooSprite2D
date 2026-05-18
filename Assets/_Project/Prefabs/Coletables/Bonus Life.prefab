@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2488686663025661920}
   - component: {fileID: 778214221885314373}
-  - component: {fileID: 5194253503282767907}
+  - component: {fileID: 2420227050499153680}
+  - component: {fileID: 6891397398128269572}
   - component: {fileID: 1917921643447219769}
   - component: {fileID: 3557229280831884637}
   - component: {fileID: 1458581439163812192}
@@ -96,7 +97,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5194253503282767907
+--- !u!114 &2420227050499153680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,12 +106,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 7205311843505309874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9552d0b40445b6549885ba7e2ee87cfe, type: 3}
+  m_Script: {fileID: 11500000, guid: 10681f46c9adb894f86e9bf60ec953ed, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.BonusLife
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ColletableItem
   pickupParticles: {fileID: 6994828912777758483, guid: 76106b3bbb678fa4097c98b37bab670a, type: 3}
-  minActiveBonus: 3
-  maxActiveBonus: 7
+  minActiveBonus: 1
+  maxActiveBonus: 5
+--- !u!114 &6891397398128269572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205311843505309874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf2e58952964b97a008be1bc795b793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.LifeEffect
 --- !u!50 &1917921643447219769
 Rigidbody2D:
   serializedVersion: 5

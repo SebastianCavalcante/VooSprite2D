@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8098099169489494366}
   - component: {fileID: 2886191827551303055}
-  - component: {fileID: 7780622272957122128}
+  - component: {fileID: 5481683812350424022}
   - component: {fileID: 4143124604749670285}
   - component: {fileID: 6069303757228220415}
   - component: {fileID: 7510597613077365673}
+  - component: {fileID: 5703697020728345011}
   m_Layer: 6
   m_Name: Bonus Time
   m_TagString: Untagged
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &7780622272957122128
+--- !u!114 &5481683812350424022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,14 +105,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 951556671551939401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f84d5486d449c3ab35931331804dd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 10681f46c9adb894f86e9bf60ec953ed, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.BonusTime
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ColletableItem
   pickupParticles: {fileID: 2646146076107249837, guid: 22167ed7114c61a4a87a14832f1fa39a, type: 3}
-  maxBonusTime: 10
-  minBonusTime: 3
-  minActiveBonus: 3
-  maxActiveBonus: 10
+  minActiveBonus: 1
+  maxActiveBonus: 3
 --- !u!50 &4143124604749670285
 Rigidbody2D:
   serializedVersion: 5
@@ -207,3 +206,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5703697020728345011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951556671551939401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1fe9adc8934e4ea6a5a34ee33446eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.TimeEffect
+  minBonusTime: 1
+  maxBonusTime: 3

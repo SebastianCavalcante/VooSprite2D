@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5846887529116915180}
   - component: {fileID: 917248173691266560}
+  - component: {fileID: 1731792262179682310}
   - component: {fileID: 2405746508213522937}
-  - component: {fileID: 7433984212339084679}
   - component: {fileID: 543614019321575003}
   - component: {fileID: 4393859136560918168}
+  - component: {fileID: 4405159783170714689}
   m_Layer: 6
   m_Name: Bonus Shild
   m_TagString: Untagged
@@ -95,6 +96,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1731792262179682310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706697443503174833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10681f46c9adb894f86e9bf60ec953ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ColletableItem
+  pickupParticles: {fileID: 3194968305191284418, guid: 6bec7d9f1656527498a27d4e7edbe084, type: 3}
+  minActiveBonus: 4
+  maxActiveBonus: 10
 --- !u!50 &2405746508213522937
 Rigidbody2D:
   serializedVersion: 5
@@ -122,23 +138,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &7433984212339084679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6706697443503174833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61ac93bd1f3f434abf30b8d255719457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.BonusShield
-  pickupParticles: {fileID: 3194968305191284418, guid: 6bec7d9f1656527498a27d4e7edbe084, type: 3}
-  minBonusShield: 5
-  maxBonusShield: 10
-  minActiveBonus: 4
-  maxActiveBonus: 12
 --- !u!61 &543614019321575003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +206,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4405159783170714689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706697443503174833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9246b4800d474e6a96d17687650202a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ShieldEffect
+  minBonusShield: 2
+  maxBonusShield: 10
