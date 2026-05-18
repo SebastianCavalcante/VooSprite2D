@@ -1395,15 +1395,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.PlayerAttack
   fireRange: 0.1
-  bullets:
-  - {fileID: 68561595087235173, guid: 6f2a6d724e9efa74f8d7681187ed58a3, type: 3}
-  - {fileID: 931308675367032664, guid: fd6c72843642df54ab11fdd64797523e, type: 3}
-  - {fileID: 8219103529457235482, guid: bd603039d5f6575428b6260a029b69aa, type: 3}
-  - {fileID: 270775187979922368, guid: 894de170189324542a4cf79981cf3423, type: 3}
-  - {fileID: 8581472154886715438, guid: aec36f9bd34d7144db3700f8b01babe6, type: 3}
-  - {fileID: 2778359223185609593, guid: 2903221104ce2f246b999038ec8e9fe0, type: 3}
-  - {fileID: 2082899352102705933, guid: 2745022427b3fda4993ae22676366c35, type: 3}
+  bulletsPrefab: {fileID: -1509653170270428689, guid: 6f2a6d724e9efa74f8d7681187ed58a3, type: 3}
   firePosition: {fileID: 240672115}
+  defautlCapacity: 20
+  maxPoolSize: 50
 --- !u!114 &672896955
 MonoBehaviour:
   m_ObjectHideFlags: 0

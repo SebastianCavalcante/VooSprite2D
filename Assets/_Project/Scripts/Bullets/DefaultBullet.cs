@@ -21,7 +21,7 @@ namespace _Project.Scripts.Bullets
         private void OnEnable()
         {
             // Resetamos o estado da bala sempre que ela sai do Pool
-            _timeToPool = 0;
+            _timeToPool = 0f;
             _spriteRenderer.enabled = true;
             _circleCollider2D.enabled = true;
         }
@@ -29,7 +29,7 @@ namespace _Project.Scripts.Bullets
         private void Update()
         {
             _timeToPool += Time.deltaTime;
-            if (_timeToPool >= 2)
+            if (_timeToPool >= 2f)
             {
                 ReleaseToPool();
                 return; // Parar a execução no update imediatamente
