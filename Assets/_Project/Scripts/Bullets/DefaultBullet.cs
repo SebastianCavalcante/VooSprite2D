@@ -18,8 +18,9 @@ namespace _Project.Scripts.Bullets
             _circleCollider2D = GetComponent<CircleCollider2D>();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable(); // Executa a flag na class base primeiro
             // Resetamos o estado da bala sempre que ela sai do Pool
             _timeToPool = 0f;
             _spriteRenderer.enabled = true;
