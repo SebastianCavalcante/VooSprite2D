@@ -1,0 +1,35 @@
+﻿#region Using Statements
+
+using System;
+
+#endregion
+
+
+namespace _Project.Scripts.Coletables
+{
+    public static class GameEvents
+    {
+        #region Events
+
+        public static event Action<float> EventAddedBonusShield;
+        public static event Action<int> EventAddLife;
+        public static event Action<float> EventShieldTimeChanged;
+        public static event Action<float> EventAddedBonusTime;
+        public static event Action<float> EventReserveTimeChaged;
+
+        #endregion
+
+        #region Public Events CallBacks
+
+        public static void ApllyBonus(float bonus) => EventAddedBonusShield?.Invoke(bonus);
+        public static void ApplyLife(int bonus) => EventAddLife?.Invoke(bonus);
+        
+        public static void ApplyShieldTimeChanged(float bonus) => EventShieldTimeChanged?.Invoke(bonus);
+        
+        public static void ApplyBonusTime(float bonus) => EventAddedBonusTime?.Invoke(bonus);
+        
+        public static void ApplyReserveTimeChanged(float bonus) => EventReserveTimeChaged?.Invoke(bonus);
+
+        #endregion
+    }
+}
