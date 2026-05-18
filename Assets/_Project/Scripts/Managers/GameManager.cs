@@ -1,37 +1,22 @@
-﻿#region Using
-
+﻿using _Project.Scripts.Coletables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-#endregion
 
 namespace _Project.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
-        #region Singleton
-
         public static GameManager Instance;
+        
         [SerializeField] private GameObject gameBoards;
-        #endregion
-
-        #region Variables
 
         public bool gameOver;
-
-        #endregion
-
-        #region Unity Methods
 
         private void Awake()
         {
             Instance = this;
         }
-
-        #endregion
-
-        #region Other Methods
-
+        
         public void RestartGame()
         {
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
@@ -39,10 +24,12 @@ namespace _Project.Scripts.Managers
 
         public void GameOver()
         {
+            if (gameOver) return; // Evita disparar o evento varias vezes
             gameOver = true;
             gameBoards.SetActive(false);
+            // Arquitetura senior. Em vez de caçar o UI Manager na cena nós avisamos o jogo
+            GameEvents.ApplyGameOverTriggered("Game Over Your Time Is Up");
+            
         }
-
-        #endregion
     }
 }
