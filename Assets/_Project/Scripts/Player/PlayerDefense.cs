@@ -1,24 +1,14 @@
-﻿#region Using Statements
-
-using _Project.Scripts.Coletables;
+﻿using _Project.Scripts.Coletables;
 using UnityEngine;
-
-#endregion
 
 namespace _Project.Scripts.Player
 {
     public class PlayerDefense : MonoBehaviour
     {
-        #region Variables
-
         [SerializeField] private GameObject shieldProtection;
         private float _bonusShield;
         // Propriedade publica para chegar se o shield esta ativo
         public bool IsShieldActive => _bonusShield > 0;
-
-        #endregion
-
-        #region Unity Methods
 
         private void Update()
         {
@@ -50,16 +40,10 @@ namespace _Project.Scripts.Player
             GameEvents.EventAddedBonusShield -= ActiveShieldProtection;
         }
 
-        #endregion
-        
-        #region Other Methods
-
         private void ActiveShieldProtection(float bonus)
         {
             _bonusShield += bonus;
             shieldProtection.SetActive(_bonusShield > 0);
         }
-
-        #endregion
     }
 }
