@@ -10,6 +10,7 @@ namespace _Project.Scripts.Managers
     public class UiManager : MonoBehaviour
     {
         public static UiManager Instance;
+        
         private UIDocument _document;
         private GameObject _player;
         
@@ -67,7 +68,11 @@ namespace _Project.Scripts.Managers
             _lifeLabel = _document.rootVisualElement.Q<Label>("lifeCount");
             _lifeImage = _document.rootVisualElement.Q<Image>("lifeImage");
             _lifeImage.tintColor = _visibleColor;
-            _lifeLabel.text = _player.GetComponent<PlayerLife>().Life.ToString();
+            
+            if (_player != null  && _player.TryGetComponent(out Player.PlayerLife playerLife))
+            {
+                _lifeLabel.text = playerLife.Life.ToString();
+            }
             _lifeLabel.style.color = new StyleColor(_positiveColor);
 
 
@@ -78,24 +83,23 @@ namespace _Project.Scripts.Managers
 
         private void Update()
         {
-            UpdateGameTime();
             _currentScoreLabel.text = $"{TimeScore.Instance.currentScore}";
-            if (GameManager.Instance.gameOver)
-            {
-                ShowRestartButton();
-            }
         }
 
         private void OnEnable()
         {
             GameEvents.EventShieldTimeChanged += UpdateShieldLabel;
             GameEvents.EventReserveTimeChaged += UpdateTimerRerserve;
+            GameEvents.EventGameTimeChanged += UpdateGameTime;
+            GameEvents.EventGameOverTriggered += ShowGameOverCase;
         }
 
         private void OnDisable()
         {
             GameEvents.EventShieldTimeChanged -= UpdateShieldLabel;
             GameEvents.EventReserveTimeChaged -= UpdateTimerRerserve;
+            GameEvents.EventGameTimeChanged -= UpdateGameTime;
+            GameEvents.EventGameOverTriggered -= ShowGameOverCase;
         }
 
 
@@ -125,9 +129,9 @@ namespace _Project.Scripts.Managers
             _lifeLabel.text = bonus.ToString();
         }
 
-        private void UpdateGameTime()
+        private void UpdateGameTime(float currentTime)
         {
-            _timerLabel.text = Mathf.FloorToInt(TimerManager.Instance.timer).ToString("");
+            _timerLabel.text = Mathf.FloorToInt(currentTime).ToString("");
         }
 
         public void UpdateShieldLabel(float timeInSeconds)
@@ -185,6 +189,7 @@ namespace _Project.Scripts.Managers
             _gameOverLabel.style.color = Color.red;
             _gameOverLabel.style.display = DisplayStyle.Flex;
             _gameOverLabel.text = gameOverCase;
+            ShowRestartButton();
         }
     }
 }

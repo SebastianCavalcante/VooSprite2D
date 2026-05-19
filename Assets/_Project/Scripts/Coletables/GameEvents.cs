@@ -17,6 +17,11 @@ namespace _Project.Scripts.Coletables
         public static event Action<float> EventAddedBonusTime;
         public static event Action<float> EventReserveTimeChaged;
 
+        // Novos eventos Senior
+        public static event Action<float> EventGameTimeChanged;
+        public static event Action<string> EventGameOverTriggered;
+        
+        
         #endregion
 
         #region Public Events CallBacks
@@ -29,6 +34,11 @@ namespace _Project.Scripts.Coletables
         public static void ApplyBonusTime(float bonus) => EventAddedBonusTime?.Invoke(bonus);
         
         public static void ApplyReserveTimeChanged(float bonus) => EventReserveTimeChaged?.Invoke(bonus);
+        
+        
+        // Novos metodos auxiliares
+        public static void ApplyGameTimeChanged(float time) => EventGameTimeChanged?.Invoke(time);
+        public static void ApplyGameOverTriggered(string triggered) => EventGameOverTriggered?.Invoke(triggered);
 
         #endregion
     }

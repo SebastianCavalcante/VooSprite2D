@@ -1,5 +1,6 @@
 ﻿#region MyRegion
 
+using _Project.Scripts.Coletables;
 using _Project.Scripts.Interfaces;
 using UnityEngine;
 #endregion
@@ -35,10 +36,9 @@ namespace _Project.Scripts.Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.TryGetComponent<IColetable>(
-                    out IColetable coletable)) // Detecta a colisão com itens coletaveis
+            if (other.gameObject.TryGetComponent<ColletableItem>(
+                    out ColletableItem coletable)) // Detecta a colisão com itens coletaveis
             {
-                coletable.Pickup();
             }
         }
 
