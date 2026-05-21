@@ -194,8 +194,9 @@ GameObject:
   - component: {fileID: 4679886807186810860}
   - component: {fileID: 3709591435913568731}
   - component: {fileID: 7293407182306574141}
-  - component: {fileID: 4923817702330855476}
   - component: {fileID: 55492497822638739}
+  - component: {fileID: 3714794261882659159}
+  - component: {fileID: 8735672027039606344}
   m_Layer: 0
   m_Name: Bonus Laser Red
   m_TagString: Untagged
@@ -305,21 +306,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4923817702330855476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8081991282853677269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9552d0b40445b6549885ba7e2ee87cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.BonusLife
-  pickupParticles: {fileID: 6994828912777758483, guid: 76106b3bbb678fa4097c98b37bab670a, type: 3}
-  minActiveBonus: 0
-  maxActiveBonus: 0
 --- !u!61 &55492497822638739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -366,3 +352,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.58, y: 0.58}
   m_EdgeRadius: 0
+--- !u!114 &3714794261882659159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081991282853677269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10681f46c9adb894f86e9bf60ec953ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ColletableItem
+  pickupParticles: {fileID: 2438534868295773153, guid: 5eafcd5b60dfab94ca3f5bf889d28d71, type: 3}
+  minActiveBonus: 5
+  maxActiveBonus: 10
+--- !u!114 &8735672027039606344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081991282853677269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1be8b13c964a07841e1f0ff84af939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.BulletEffect
+  bulletIndex: 5
