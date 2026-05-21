@@ -191,9 +191,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5152232380721246103}
+  - component: {fileID: 1524774633780641940}
+  - component: {fileID: 3323102083733799862}
   - component: {fileID: 2012849485809726404}
   - component: {fileID: 1765684047697393625}
-  - component: {fileID: 3711061343758440710}
   - component: {fileID: 5853028270791621298}
   m_Layer: 0
   m_Name: Bonus Bullet Default
@@ -219,6 +220,34 @@ Transform:
   - {fileID: 7348611900762552426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1524774633780641940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746372601631651783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10681f46c9adb894f86e9bf60ec953ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ColletableItem
+  pickupParticles: {fileID: 939239101563279282, guid: 1bf8bba1d9c57cf4492f4356650fb0c1, type: 3}
+  minActiveBonus: 2
+  maxActiveBonus: 10
+--- !u!114 &3323102083733799862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746372601631651783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1be8b13c964a07841e1f0ff84af939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.BulletEffect
+  bulletIndex: 0
 --- !u!212 &2012849485809726404
 SpriteRenderer:
   serializedVersion: 2
@@ -305,21 +334,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &3711061343758440710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746372601631651783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9552d0b40445b6549885ba7e2ee87cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.BonusLife
-  pickupParticles: {fileID: 939239101563279282, guid: 1bf8bba1d9c57cf4492f4356650fb0c1, type: 3}
-  minActiveBonus: 0
-  maxActiveBonus: 0
 --- !u!61 &5853028270791621298
 BoxCollider2D:
   m_ObjectHideFlags: 0

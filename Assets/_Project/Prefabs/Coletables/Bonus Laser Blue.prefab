@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5564083579272747556}
   - component: {fileID: 3316644949950918372}
   - component: {fileID: 461833641645230675}
-  - component: {fileID: 2107529750120637353}
   - component: {fileID: 9056903342533970989}
+  - component: {fileID: 6267191171423393119}
+  - component: {fileID: 8913782428474512893}
   m_Layer: 0
   m_Name: Bonus Laser Blue
   m_TagString: Untagged
@@ -122,21 +123,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &2107529750120637353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505397018950318190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9552d0b40445b6549885ba7e2ee87cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.BonusLife
-  pickupParticles: {fileID: 6511685837803978801, guid: f2778a101c68871429b082a0886b4f90, type: 3}
-  minActiveBonus: 0
-  maxActiveBonus: 0
 --- !u!61 &9056903342533970989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -183,6 +169,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.58, y: 0.58}
   m_EdgeRadius: 0
+--- !u!114 &6267191171423393119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505397018950318190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10681f46c9adb894f86e9bf60ec953ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.ColletableItem
+  pickupParticles: {fileID: 6511685837803978801, guid: f2778a101c68871429b082a0886b4f90, type: 3}
+  minActiveBonus: 5
+  maxActiveBonus: 10
+--- !u!114 &8913782428474512893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505397018950318190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1be8b13c964a07841e1f0ff84af939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.BulletEffect
+  bulletIndex: 4
 --- !u!1 &2776998323301257552
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5345315650616469833}
   - component: {fileID: 8622801204805389497}
   - component: {fileID: 2641654914105077784}
-  - component: {fileID: 6028856030913108950}
+  - component: {fileID: 5098973586299262832}
   m_Layer: 0
   m_Name: Bullet Plasma
   m_TagString: Bullets
@@ -109,7 +109,7 @@ MonoBehaviour:
   speed: 30
   rb: {fileID: 2641654914105077784}
   totalShots: 0
-  impactEffect: {fileID: 0}
+  impactEffect: {fileID: 5104661128242643379, guid: 658028af8a8a7a44791c1d09d2be798b, type: 3}
 --- !u!50 &2641654914105077784
 Rigidbody2D:
   serializedVersion: 5
@@ -137,8 +137,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &6028856030913108950
-CapsuleCollider2D:
+--- !u!58 &5098973586299262832
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,10 +167,9 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0028393269, y: 0.08759868}
-  m_Size: {x: 0.15038347, y: 0.19628596}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.08500943}
+  m_Radius: 0.106054164

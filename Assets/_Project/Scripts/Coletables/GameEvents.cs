@@ -20,6 +20,8 @@ namespace _Project.Scripts.Coletables
         // Novos eventos Senior
         public static event Action<float> EventGameTimeChanged;
         public static event Action<string> EventGameOverTriggered;
+
+        public static event Action<int> EventChangeWeapon;
         
         
         #endregion
@@ -39,6 +41,8 @@ namespace _Project.Scripts.Coletables
         // Novos metodos auxiliares
         public static void ApplyGameTimeChanged(float time) => EventGameTimeChanged?.Invoke(time);
         public static void ApplyGameOverTriggered(string triggered) => EventGameOverTriggered?.Invoke(triggered);
+        
+        public static void ApplyChangeWeapon(int bulletIndex)  => EventChangeWeapon?.Invoke(bulletIndex);
 
         #endregion
     }

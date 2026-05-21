@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5537386720659629063}
   - component: {fileID: 8028599834495035168}
   - component: {fileID: 1403060639519384451}
-  - component: {fileID: 9021854461994256244}
-  m_Layer: 0
+  - component: {fileID: 5258019617315024776}
+  m_Layer: 8
   m_Name: Rocket
   m_TagString: Bullets
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   speed: 15
   rb: {fileID: 1403060639519384451}
   totalShots: 0
-  impactEffect: {fileID: 0}
+  impactEffect: {fileID: 5104661128242643379, guid: 658028af8a8a7a44791c1d09d2be798b, type: 3}
 --- !u!50 &1403060639519384451
 Rigidbody2D:
   serializedVersion: 5
@@ -138,8 +138,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &9021854461994256244
-CapsuleCollider2D:
+--- !u!58 &5258019617315024776
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -168,13 +168,12 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0033991337, y: -0.0024044514}
-  m_Size: {x: 0.09775972, y: 0.2827654}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.073225945}
+  m_Radius: 0.06397027
 --- !u!1001 &77037450620529659
 PrefabInstance:
   m_ObjectHideFlags: 0

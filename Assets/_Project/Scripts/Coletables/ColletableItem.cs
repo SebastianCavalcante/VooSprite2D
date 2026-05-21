@@ -63,7 +63,6 @@ namespace _Project.Scripts.Coletables
                 
                 // Destroy o coletavel
                 Destroy(gameObject);
-
             }
         }
 

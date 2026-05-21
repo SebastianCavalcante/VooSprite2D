@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4881694091729940088}
   - component: {fileID: 961862271486607364}
   - component: {fileID: 9214077033938700243}
-  - component: {fileID: 4168350769003322543}
-  m_Layer: 0
+  - component: {fileID: 6575305548468233902}
+  m_Layer: 8
   m_Name: Laser Blue
   m_TagString: Bullets
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   speed: 50
   rb: {fileID: 9214077033938700243}
   totalShots: 0
-  impactEffect: {fileID: 0}
+  impactEffect: {fileID: 5104661128242643379, guid: 658028af8a8a7a44791c1d09d2be798b, type: 3}
 --- !u!50 &9214077033938700243
 Rigidbody2D:
   serializedVersion: 5
@@ -137,8 +137,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &4168350769003322543
-CapsuleCollider2D:
+--- !u!58 &6575305548468233902
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,10 +167,9 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0057234764, y: -0.009011984}
-  m_Size: {x: 0.08405399, y: 0.29866457}
-  m_Direction: 0
+  m_Offset: {x: -0.00084168464, y: 0.01683354}
+  m_Radius: 0.12457106
