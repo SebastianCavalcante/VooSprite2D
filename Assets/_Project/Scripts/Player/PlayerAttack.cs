@@ -64,7 +64,7 @@ namespace _Project.Scripts.Player
             if (GameManager.Instance.gameOver) return;
             if (Mouse.current.rightButton.wasPressedThisFrame)
             {
-                _playerSounds.PlayFire();
+                _playerSounds.PlayFire(_currentBulletIndex);
                 
                 // Pega o Pool correspondende a arma  equipada atualmente
                 IObjectPool<Bullet> currentPool = _poolsDictionary[_currentBulletIndex];

@@ -17,7 +17,7 @@ namespace _Project.Scripts.Player
         [SerializeField] AudioClip lifeSound;
         [SerializeField] AudioClip shieldSound;
         [SerializeField] AudioClip timeSound;
-        [SerializeField] AudioClip fireSound;
+        [SerializeField] AudioClip[] fireSounds;
         [SerializeField] private AudioClip thRuster;
         [SerializeField] private AudioClip hitSound;
         [SerializeField] private AudioClip deathSound;
@@ -43,9 +43,9 @@ namespace _Project.Scripts.Player
             effectsAudioSource.PlayOneShot(timeSound);
         }
 
-        public void PlayFire()
+        public void PlayFire(int weaponIndex)
         {
-            fireAudioSource.PlayOneShot(fireSound);
+            fireAudioSource.PlayOneShot(fireSounds[weaponIndex]);
         }
 
         public void PlayHit()

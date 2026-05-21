@@ -1453,7 +1453,14 @@ MonoBehaviour:
   lifeSound: {fileID: 8300000, guid: 31faf546a72c98e4b9c402a1c6e1e511, type: 3}
   shieldSound: {fileID: 8300000, guid: 22de50e558824794da31f82d05105d19, type: 3}
   timeSound: {fileID: 8300000, guid: f9aad8479995d4c46b0039d0eab2a20a, type: 3}
-  fireSound: {fileID: 8300000, guid: 059287e8d0e4d6349adecefebe924059, type: 3}
+  fireSounds:
+  - {fileID: 8300000, guid: 5ce476f2392da8f46ad5e2ea0919ef83, type: 3}
+  - {fileID: 8300000, guid: 4e7aedf68e007f54b8e74d4e7fb26211, type: 3}
+  - {fileID: 8300000, guid: 1032e61b85bfa2f4bae417364c19197c, type: 3}
+  - {fileID: 8300000, guid: 059287e8d0e4d6349adecefebe924059, type: 3}
+  - {fileID: 8300000, guid: f7e1cf16596a3d147914912c82429a0e, type: 3}
+  - {fileID: 8300000, guid: 84c39bf659364504c85733859ee7100d, type: 3}
+  - {fileID: 8300000, guid: de343657e6fa6e845a0e2e54cad1af1f, type: 3}
   thRuster: {fileID: 8300000, guid: 5a92eb0796be959429ae3e6ef47e16bf, type: 3}
   hitSound: {fileID: 8300000, guid: 3f155485c2cd40348b67c95a8ace3db2, type: 3}
   deathSound: {fileID: 8300000, guid: 456b9fc81aa80cd47a68eba611795751, type: 3}
