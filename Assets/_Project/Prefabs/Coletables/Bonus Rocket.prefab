@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4054696586800734016}
   - component: {fileID: 7024800232799646815}
   - component: {fileID: 4782110482198435987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonus Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,4 +379,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1be8b13c964a07841e1f0ff84af939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.BulletEffect
-  bulletIndex: 7
+  bulletIndex: 6

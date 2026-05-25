@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3212291868409738044}
   - component: {fileID: 4676173622006303893}
   - component: {fileID: 2581189764801937160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Bonus Bullet Plasm '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1be8b13c964a07841e1f0ff84af939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.BulletEffect
-  bulletIndex: 3
+  bulletIndex: 2
 --- !u!1 &2775873444928120576
 GameObject:
   m_ObjectHideFlags: 0

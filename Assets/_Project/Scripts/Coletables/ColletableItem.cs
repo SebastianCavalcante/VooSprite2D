@@ -52,7 +52,8 @@ namespace _Project.Scripts.Coletables
                 }
                 if (pickupParticles != null)
                 {
-                    Instantiate(pickupParticles, transform.position, Quaternion.identity);
+                    GameObject particle = Instantiate(pickupParticles, transform.position, Quaternion.identity);
+                    Destroy(particle, 1);
                 }
                 
                 // TODO chamar o efeito especifico life/tempo/escudo

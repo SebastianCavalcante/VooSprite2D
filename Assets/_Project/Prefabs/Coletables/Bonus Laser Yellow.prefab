@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3294347372155541953}
   - component: {fileID: 8246753701551743770}
   - component: {fileID: 5296553584869302718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonus Laser Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1be8b13c964a07841e1f0ff84af939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Coletables.BulletEffect
-  bulletIndex: 6
+  bulletIndex: 5
 --- !u!1 &3579897672808218186
 GameObject:
   m_ObjectHideFlags: 0

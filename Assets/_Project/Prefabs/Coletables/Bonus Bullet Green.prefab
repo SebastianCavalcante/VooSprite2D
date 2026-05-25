@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8447547596999027601}
   - component: {fileID: 4364784318870828390}
   - component: {fileID: 4454231533272757865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonus Bullet Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
