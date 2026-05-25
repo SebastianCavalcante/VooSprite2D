@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8622801204805389497}
   - component: {fileID: 2641654914105077784}
   - component: {fileID: 5098973586299262832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet Plasma
   m_TagString: Bullets
   m_Icon: {fileID: 0}
