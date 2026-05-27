@@ -11,8 +11,8 @@ namespace _Project.Scripts.Managers
     {
         public static UiManager Instance;
         
-        private UIDocument _document;
         private GameObject _player;
+        private UIDocument _document;
         
         private Label _lifeLabel;
         private Label _timerLabel;
@@ -27,15 +27,15 @@ namespace _Project.Scripts.Managers
         private Image _shildImage;
         
         private Button _restartButton;
+        private Button _easyButton;
+        private Button _normalButton;
+        private Button _hardButton;
         
         private readonly Color32 _opacityColor = new Color32(255, 255, 255, 10);
         private readonly Color32 _visibleColor = new Color32(255, 255, 255, 255);
         private readonly Color32 _negativeColor = new Color32(255, 0, 0, 255);
         private readonly Color32 _positiveColor = new Color32(33, 255, 0, 255);
         
-        
-
-
         private void Awake()
         {
             Instance = this;
@@ -58,8 +58,7 @@ namespace _Project.Scripts.Managers
             _timerImage.tintColor = _opacityColor;
             _timerCountLabel.style.color = new StyleColor(_opacityColor);
             _timerCountLabel.text = "00:00";
-
-
+            
             _shieldLabel = _document.rootVisualElement.Q<Label>("shieldCount");
             _shieldLabel.style.color = new StyleColor(_opacityColor);
             _shildImage = _document.rootVisualElement.Q<Image>("shieldImage");
@@ -74,8 +73,7 @@ namespace _Project.Scripts.Managers
                 _lifeLabel.text = playerLife.Life.ToString();
             }
             _lifeLabel.style.color = new StyleColor(_positiveColor);
-
-
+            
             _restartButton = _document.rootVisualElement.Q<Button>("restartButton");
             _restartButton.clickable.clicked += () => GameManager.Instance.RestartGame();
             _restartButton.style.display = DisplayStyle.None;
@@ -101,8 +99,7 @@ namespace _Project.Scripts.Managers
             GameEvents.EventGameTimeChanged -= UpdateGameTime;
             GameEvents.EventGameOverTriggered -= ShowGameOverCase;
         }
-
-
+        
         public void ShowRestartButton()
         {
             _restartButton.style.display = DisplayStyle.Flex;
@@ -114,7 +111,7 @@ namespace _Project.Scripts.Managers
             if (bonus == 0) 
             {
                targetColor = _opacityColor;
-                _lifeImage.tintColor = _opacityColor;
+               _lifeImage.tintColor = _opacityColor;
             }
             else if (bonus == 1)
             {
@@ -180,7 +177,6 @@ namespace _Project.Scripts.Managers
             {
                 targetColor = _positiveColor;
             }
-
             _timerCountLabel.style.color = targetColor;
         }
 

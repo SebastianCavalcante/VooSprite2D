@@ -1,10 +1,6 @@
-#region Using Statements
-
-using _Project.Scripts.Interfaces;
 using UnityEngine;
+using _Project.Scripts.Interfaces;
 using Random = UnityEngine.Random;
-
-#endregion
 
 namespace _Project.Scripts.Obstacles
 {
@@ -13,7 +9,8 @@ namespace _Project.Scripts.Obstacles
     {
         private Rigidbody2D _rb;
         private int _obstacleLives;
-        [SerializeField]private AudioSource _audioSource;
+        private int _randomPowerUp;
+        
         [SerializeField] private int minLives;
         [SerializeField] private int maxLives;
         [SerializeField] private float minSpeed;
@@ -21,36 +18,27 @@ namespace _Project.Scripts.Obstacles
         [SerializeField] private float minSpeedSpin;
         [SerializeField] private float maxSpeedSpin;
         [SerializeField] private GameObject impactEffect;
-        [SerializeField] private AudioClip[] impactSounds;
         [SerializeField] private GameObject[] powerUpsDrops;
-
-        private int _randomPowerUp;
-        private int _currentSoundIndex;
+        
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            
         }
 
         private void Start()
         {
+           
+            int randomLives = Random.Range(minLives, maxLives);  // random Lives
+            float randomSpeed = Random.Range(minSpeed, maxSpeed); // Random move speed
+            float randomSpeedSpin = Random.Range(minSpeedSpin, maxSpeedSpin); // Random Spin
+            _randomPowerUp = Random.Range(0, powerUpsDrops.Length); //Random Power Up to drop
             
-            #region Random Values
-
-            int randomLives = Random.Range(minLives, maxLives);
-            _randomPowerUp = Random.Range(0, powerUpsDrops.Length);
-            float randomSpeed = Random.Range(minSpeed, maxSpeed);
-            float randomSpeedSpin = Random.Range(minSpeedSpin, maxSpeedSpin);
             Vector2 randomDirection = Random.insideUnitCircle;
-            _currentSoundIndex = Random.Range(0,  impactSounds.Length);
-            #endregion
 
             _obstacleLives = randomLives;
             _rb.AddForce(randomDirection * randomSpeed);
             _rb.AddTorque(randomSpeedSpin);
         }
-
-        #region Other Methods
 
         public void Impact()
         {
@@ -92,20 +80,9 @@ namespace _Project.Scripts.Obstacles
             }
         }
 
-        private void PlayImpactSound()
-        {
-            if (_audioSource != null)
-            {
-                _audioSource.PlayOneShot(impactSounds[_currentSoundIndex]);
-            }
-            
-        }
-
         private void CreatePowerUp()
         {
             Instantiate(powerUpsDrops[_randomPowerUp], transform.position, Quaternion.identity);
         }
-
-        #endregion
     }
 }

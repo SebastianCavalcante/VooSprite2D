@@ -3,6 +3,5 @@
     public interface IObstacle
     {
         public void Impact();
-        
     }
 }
