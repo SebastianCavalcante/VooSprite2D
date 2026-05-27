@@ -1,25 +1,17 @@
-﻿#region MyRegion
-
+﻿using UnityEngine;
 using _Project.Scripts.Coletables;
 using _Project.Scripts.Interfaces;
-using UnityEngine;
-#endregion
+
 namespace _Project.Scripts.Player
 {
     public class PlayerDetection : MonoBehaviour, IObstacle
     {
-        #region Components
-
         private PlayerLife _playerLife;
-        
-        #endregion
 
         private void Awake()
         {
             _playerLife = GetComponent<PlayerLife>();
         }
-
-        #region Unity Methods
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -37,19 +29,14 @@ namespace _Project.Scripts.Player
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.TryGetComponent<ColletableItem>(
-                    out ColletableItem coletable)) // Detecta a colisão com itens coletaveis
+                    out ColletableItem coletable))
             {
-            }
+            } // Detecta a colisão com itens coletaveis
         }
 
-        #endregion
-        
-        #region Interface Implementation
         public void Impact()
         {
             _playerLife.DecreaseLife();
         }
-        
-        #endregion
     }
 }
