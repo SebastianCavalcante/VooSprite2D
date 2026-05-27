@@ -1,6 +1,6 @@
-using _Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using _Project.Scripts.Managers;
 
 namespace _Project.Scripts.Player
 {
@@ -42,9 +42,7 @@ namespace _Project.Scripts.Player
                 StopThruster();
                 return;
             }
-
             HandleInputs(); 
-            
         }
 
         private void FixedUpdate()

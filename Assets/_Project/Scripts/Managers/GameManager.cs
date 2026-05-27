@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Coletables;
-using UnityEngine;
+﻿using UnityEngine;
+using _Project.Scripts.Coletables;
 using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Managers
@@ -9,7 +9,7 @@ namespace _Project.Scripts.Managers
         public static GameManager Instance;
         
         [SerializeField] private GameObject gameBoards;
-
+        
         public bool gameOver;
 
         private void Awake()
@@ -29,7 +29,6 @@ namespace _Project.Scripts.Managers
             gameBoards.SetActive(false);
             // Arquitetura senior. Em vez de caçar o UI Manager na cena nós avisamos o jogo
             GameEvents.ApplyGameOverTriggered("Game Over Your Time Is Up");
-            
         }
     }
 }

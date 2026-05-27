@@ -1,17 +1,11 @@
-﻿#region Using Statements
-
+﻿using UnityEngine;
 using _Project.Scripts.Coletables;
 using _Project.Scripts.Managers;
-using UnityEngine;
-
-#endregion
 
 namespace _Project.Scripts.Player
 {
     public class PlayerLife : MonoBehaviour
     {
-        #region Variables
-    
         private PlayerSounds _playerSounds;
         private SpriteRenderer _playerSprite;
         [SerializeField] private GameObject shieldObj;
@@ -25,38 +19,20 @@ namespace _Project.Scripts.Player
         [SerializeField] private int life;
         [SerializeField] private GameObject explosionEffect;
 
-        #endregion
-
-        #region Properties
-
         public int Life
         {
             get => life;
             set => life = value;
         }
 
-        #endregion
-
-        #region Unity Methods
-
         private void Start()
         {
             Life = life;
         }
 
-        private void OnEnable()
-        {
-            GameEvents.EventAddLife += UpdateLife;
-        }
+        private void OnEnable() => GameEvents.EventAddLife += UpdateLife;
 
-        private void OnDisable()
-        {
-            GameEvents.EventAddLife -= UpdateLife;
-        }
-
-        #endregion
-        
-        #region Other Methods
+        private void OnDisable() => GameEvents.EventAddLife -= UpdateLife;
 
         private void UpdateLife(int value)
         {
@@ -74,6 +50,7 @@ namespace _Project.Scripts.Player
                 // Se o escudo estiver ativo interrompemos o script aqui! e assim nao tomamos dano
                 return;
             }
+
             _playerSounds.PlayHit();
             life -= 1;
             CheckAlertLife();
@@ -86,7 +63,7 @@ namespace _Project.Scripts.Player
             if (life <= 0)
             {
                 _playerSounds.PlayDeath();
-                
+
                 GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
                 GameManager.Instance.GameOver();
                 gameObject.GetComponent<Collider2D>().enabled = false;
@@ -95,7 +72,7 @@ namespace _Project.Scripts.Player
                 UiManager.Instance.UpdateLifeCountEvent(life);
                 string gameOverCase = "You Are Dead";
                 UiManager.Instance.ShowGameOverCase(gameOverCase);
-                Destroy(gameObject,1);
+                Destroy(gameObject, 1);
             }
         }
 
@@ -107,14 +84,12 @@ namespace _Project.Scripts.Player
             _playerSprite.enabled = false;
             life = 0;
             UiManager.Instance.UpdateLifeCountEvent(life);
-            Destroy(gameObject,1);
+            Destroy(gameObject, 1);
         }
 
         private void CheckAlertLife()
         {
             _playerSounds.PlayAlertExplosion(life == 1);
         }
-
-        #endregion
     }
 }

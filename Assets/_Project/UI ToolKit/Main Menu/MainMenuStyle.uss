@@ -1,0 +1,11 @@
+:root {
+}
+
+.button {
+    align-self: center;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/orbitron-light.otf?fileID=12800000&guid=af40adf21e13fce42b36109a03f33638&type=3#orbitron-light");
+    font-size: 40px;
+    -unity-text-align: middle-center;
+    width: 300px;
+    height: 100px;
+}

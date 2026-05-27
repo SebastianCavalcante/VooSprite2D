@@ -1624,6 +1624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9058502746175641235, guid: 3d3f3febf5106794c8c0f149187811e3, type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2193,6 +2197,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 297799025}
     m_Modifications:
+    - target: {fileID: 3154559533924858411, guid: 8f63982a9efc31240b98a9a06ac49a99, type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4736671320983075405, guid: 8f63982a9efc31240b98a9a06ac49a99, type: 3}
       propertyPath: m_Name
       value: Small Obstacle (1)
@@ -2687,6 +2695,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Managers.GameOver
   gameBoards: {fileID: 1826606084}
+  minEasySped: 100
+  maxEasySped: 300
+  minNormalSPeed: 250
+  maxNormalSPeed: 600
+  minHardSPeed: 300
+  maxHardSPeed: 700
+  randomSpeed: 0
   gameOver: 0
 --- !u!4 &1545408764
 Transform:
@@ -3088,6 +3103,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3401568778427740888, guid: 2fdc77338ab225549a8bdf941e8b5021, type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7980659745205650869, guid: 2fdc77338ab225549a8bdf941e8b5021, type: 3}
       propertyPath: m_Name
       value: Midium Obstacle
@@ -3182,6 +3201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9058502746175641235, guid: 3d3f3febf5106794c8c0f149187811e3, type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3210,6 +3233,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 297799025}
     m_Modifications:
+    - target: {fileID: 3154559533924858411, guid: 8f63982a9efc31240b98a9a06ac49a99, type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4736671320983075405, guid: 8f63982a9efc31240b98a9a06ac49a99, type: 3}
       propertyPath: m_Name
       value: Small Obstacle

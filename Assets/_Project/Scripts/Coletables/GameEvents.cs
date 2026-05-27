@@ -22,6 +22,8 @@ namespace _Project.Scripts.Coletables
         public static event Action<string> EventGameOverTriggered;
 
         public static event Action<int> EventChangeWeapon;
+
+        public static event Action<float> EventMinMaxSpeed;
         
         
         #endregion
@@ -43,6 +45,7 @@ namespace _Project.Scripts.Coletables
         public static void ApplyGameOverTriggered(string triggered) => EventGameOverTriggered?.Invoke(triggered);
         
         public static void ApplyChangeWeapon(int bulletIndex)  => EventChangeWeapon?.Invoke(bulletIndex);
+        public static void ApplyMinMaxSpeed(float speed) => EventMinMaxSpeed?.Invoke(speed);
 
         #endregion
     }

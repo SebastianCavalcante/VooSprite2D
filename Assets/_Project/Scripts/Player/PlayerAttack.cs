@@ -1,28 +1,21 @@
-#region Using Statements
-
-using System;
-using System.Collections.Generic;
-using _Project.Scripts.Bullets;
-using _Project.Scripts.Coletables;
-using _Project.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.InputSystem;
-using UnityEngine.Pool; // NameSpace essencial para o pooling nativo
-
-#endregion
+using _Project.Scripts.Bullets;
+using _Project.Scripts.Managers;
+using System.Collections.Generic;
+using _Project.Scripts.Coletables;
 
 namespace _Project.Scripts.Player
 {
     public class PlayerAttack : MonoBehaviour
     {
-        #region Variables
-        
         [SerializeField] private float fireRange;
         [SerializeField] private Bullet[] bulletsPrefabs;  // Mudamos de GameObjec para Bullet / obtendo ganho de tipagem estatica aqui
         [SerializeField] private Transform firePosition;
         
-        private PlayerSounds _playerSounds;
         private int _currentBulletIndex;
+        private PlayerSounds _playerSounds;
         
         //Configurações opcionais de otimização
         [SerializeField] private int defautlCapacity = 20;
@@ -30,8 +23,6 @@ namespace _Project.Scripts.Player
         
         // Arquiteruta Senior: Um dicionario que armazena um pool para cada tipo de bala
         private Dictionary<int, IObjectPool <Bullet>> _poolsDictionary;
-        
-        #endregion
 
         private void Awake()
         {
@@ -56,8 +47,7 @@ namespace _Project.Scripts.Player
                 _poolsDictionary.Add(index, individualPool);
             }
         }
-
-        #region Update Methods
+        
         // Update is called once per frame
         private void Update()
         {
@@ -79,10 +69,6 @@ namespace _Project.Scripts.Player
             }
         }
         
-        #endregion
-
-
-      
         // Metodo de criação limpo sem switch e baseado no indice fixo do pool
         private Bullet CreateBullet(int bulletIndex)
         {
@@ -120,15 +106,9 @@ namespace _Project.Scripts.Player
             Gizmos.DrawWireSphere(firePosition.position, fireRange);
         }
 
-        private void OnEnable()
-        {
-            GameEvents.EventChangeWeapon += SelectBullet;
-        }
+        private void OnEnable() => GameEvents.EventChangeWeapon += SelectBullet;
 
-        private void OnDisable()
-        {
-            GameEvents.EventChangeWeapon -=  SelectBullet;
-        }
+        private void OnDisable() => GameEvents.EventChangeWeapon -=  SelectBullet;
 
         private void SelectBullet(int bulletIndex)
         {

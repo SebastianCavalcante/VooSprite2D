@@ -1,12 +1,13 @@
-﻿using _Project.Scripts.Coletables;
-using UnityEngine;
+﻿using UnityEngine;
+using _Project.Scripts.Coletables;
 
 namespace _Project.Scripts.Player
 {
     public class PlayerDefense : MonoBehaviour
     {
-        [SerializeField] private GameObject shieldProtection;
         private float _bonusShield;
+        [SerializeField] private GameObject shieldProtection;
+
         // Propriedade publica para chegar se o shield esta ativo
         public bool IsShieldActive => _bonusShield > 0;
 
@@ -18,7 +19,7 @@ namespace _Project.Scripts.Player
                 _bonusShield -= Time.deltaTime;
                 // Chamamos o evento enviando o tempo de atualização restante
                 GameEvents.ApplyShieldTimeChanged(_bonusShield);
-                
+
                 // Caso o shield acabe neste frame desativamos o escudo
                 if (_bonusShield <= 0)
                 {
@@ -30,15 +31,9 @@ namespace _Project.Scripts.Player
             }
         }
 
-        private void OnEnable()
-        {
-            GameEvents.EventAddedBonusShield += ActiveShieldProtection;
-        }
+        private void OnEnable() => GameEvents.EventAddedBonusShield += ActiveShieldProtection;
 
-        private void OnDisable()
-        {
-            GameEvents.EventAddedBonusShield -= ActiveShieldProtection;
-        }
+        private void OnDisable() => GameEvents.EventAddedBonusShield -= ActiveShieldProtection;
 
         private void ActiveShieldProtection(float bonus)
         {
